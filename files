@@ -1,0 +1,42 @@
+// app/page.tsx
+import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Packaged Dynamite — Premium Meal Prep & Fitness",
+  description: "Refining your fitness level. Healthy meals prepared for you — delivered. Built by Melow_fit.",
+  generator: "v0.dev",
+};
+
+const openWhatsApp = (message: string) => {
+  window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+};
+
+const HomePage = () => {
+  return (
+    <div>
+      <section className="hero">
+        <Image
+          src="/images/packaged-dynamite-logo.jpg"
+          alt="Packaged Dynamite logo - diamond with hands and kettlebells"
+          width={280}
+          height={280}
+          className="object-contain"
+          priority
+        />
+        <h1 className="hero-title text-4xl md:text-6xl lg:text-7xl font-extrabold mb-3 bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400 bg-clip-text text-transparent tracking-tight">
+          Packaged Dynamite
+        </h1>
+        <p className="hero-subtitle text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto">
+          Refining your fitness level. Healthy meals prepared for you.
+        </p>
+        <button onClick={() => openWhatsApp("Hi! I would like to order from Packaged Dynamite.")}>
+          Order Now
+        </button>
+      </section>
+      {/* rest of code here */}
+    </div>
+  );
+};
+
+export default HomePage;
